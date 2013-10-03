@@ -1,4 +1,4 @@
-#1 - Licença deste Documento
+## 1 - Licença deste Documento
 
 Para a utilização deste documento é necessário seguir as regras da licença Creative Commons pela mesma Licença 2.0 Brasil [](http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt_BR). 
 
@@ -24,7 +24,7 @@ Direitos que outras pessoas podem ter sobre a obra ou sobre a utilização da ob
 Aviso — Para qualquer reutilização ou distribuição, você deve deixar claro a terceiros os termos da licença a que se encontra submetida esta obra. A melhor maneira de fazer isso é com um link para esta página. 
 
 
-#2 - Introdução ao Sistema e-cidade
+## 2 - Introdução ao Sistema e-cidade
 
 O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
 A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. 
@@ -46,18 +46,18 @@ JAVA TOMCAT</br>
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png) &nbsp;
 
 
-#3 - Instalação do Sistema
+## 3 - Instalação do Sistema
 
-##3.1 - Informações gerais para instalação
+## 3.1 - Informações gerais para instalação
 
 É recomendado que este guia seja executado por um usuário com experiência em instalação de pacotes no Linux e configuração básica de Apache, PHP e PostgreSQL. 
 Este roteiro está baseado no Sistema Operacional GNU/Linux Ubuntu 10.04 LTS. Cabe lembrar que em outras distribuições Linux o processo de instalação pode variar.
 Este manual pressupõe que o servidor de aplicação Web e o banco de dados estarão instalados no mesmo servidor. 
 Neste guia, sempre que necessário editar algum arquivo, será usado o editor de texto GEDIT. Mas cabe lembrar que é apenas uma opção, existem outros editores como o VIM.
   
-#4 - Passo-a-passo da Instalação
+## 4 - Passo-a-passo da Instalação
 
-##4.1 - Instalando e configurando o Servidor WEB Apache2
+## 4.1 - Instalando e configurando o Servidor WEB Apache2
 
 Para instalar o Apache2, execute o seguinte comando:
 <br>`sudo apt-get install apache2`</br>
@@ -92,7 +92,7 @@ Adicione o usuário que irá administrar o e-cidade no grupo “www-data”. Ess
 Adicione a seguinte linha (onde “usuario1” deve ser trocado pelo seu usuário criado na instalação do Ubuntu):
 <br>`www-data:x:33:usuario1`</br>
 
-##4.2 - Instalando o PHP 5
+## 4.2 - Instalando o PHP 5
 
 Execute o seguinte comando para instalar os pacotes necessários:
 <br>`sudo apt-get install php5 php5-gd php5-pgsql php5-cli php5-mhash php5-mcrypt`</br>
@@ -412,7 +412,7 @@ Reinicie o Apache:
 
 `sudo /etc/init.d/apache2 restart`
 
-##4.8 - Disponibilização do “e-cidade online”
+## 4.8 - Disponibilização do “e-cidade online”
 
 O pacote e-cidadeonline é o serviço disponível ao cidadão.
 
@@ -452,5 +452,5 @@ Para acessar o e-cidade online, entre no seguinte endereço	:
 
 `http://<ip_do_servidor>/e-cidadeonline`
 
-#5 - Link da Licença Júridica Creative Commons
+## 5 - Link da Licença Júridica Creative Commons
 http://creativecommons.org/licenses/by-sa/2.0/br/legalcode
