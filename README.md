@@ -10,9 +10,9 @@ Você tem a liberdade de:
 
 Sob as seguintes condições:
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp;Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp; Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp;Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp; Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
 
 Ficando claro que:
 Renúncia — Qualquer das condições acima pode ser [renunciada](http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#) se você obtiver permissão do titular dos direitos autorais. 
@@ -28,6 +28,7 @@ Aviso — Para qualquer reutilização ou distribuição, você deve deixar clar
 
 O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
 A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. 
+
 ## 2.1 - Características 
 O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: www.softwarepublico.gov.br. 
 O sistema possui a seguinte plataforma tecnológica:
@@ -381,7 +382,8 @@ Compatibilidade das versões do Firefox:
 O e-cidade é compatível com a versão 3.0 ou inferior do Mozilla Firefox.
 
 Para tornar o e-cidade compatível com as demais versões do Firefox é necessário editar o seguinte arquivo:
-sudo gedit  /var/www/e-cidade/config/require_extensions.xml
+
+`sudo gedit  /var/www/e-cidade/config/require_extensions.xml`
 
 Onde está assim:
 
@@ -432,7 +434,7 @@ Ajuste as permissões da pasta:
 
 Confira o arquivo de configuração da base de dados:
 
-sudo gedit /var/www/e-cidadeonline/libs/db_conn.php 
+`sudo gedit /var/www/e-cidadeonline/libs/db_conn.php`
 	
 As variáveis devem estar da seguinte maneira:
 
