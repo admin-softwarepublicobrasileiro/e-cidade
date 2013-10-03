@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Manual de Instalação do e-cidade V1.0 by admin-softwarepublicobrasileiro</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Manual de Instalação do e-cidade V1.0</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/admin-softwarepublicobrasileiro/e-cidade" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/admin-softwarepublicobrasileiro/e-cidade/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/admin-softwarepublicobrasileiro/e-cidade/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="1---licen%C3%A7a-deste-documento" class="anchor" href="#1---licen%C3%A7a-deste-documento"><span class="octicon octicon-link"></span></a>1 - Licença deste Documento</h1>
+
+<p>Para a utilização deste documento é necessário seguir as regras da licença Creative Commons pela mesma Licença 2.0 Brasil <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/br/deed.pt_BR"></a>. </p>
+
+<p>Você tem a liberdade de:</p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png" alt="">   Compartilhar — copiar, distribuir e transmitir a obra.</p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png" alt="">   Remixar — criar obras derivadas.</p>
+
+<p>Sob as seguintes condições:</p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png" alt="">  Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). </p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png" alt="">  Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. </p>
+
+<p>Ficando claro que:
+Renúncia — Qualquer das condições acima pode ser <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#">renunciada</a> se você obtiver permissão do titular dos direitos autorais. 
+Domínio Público — Onde a obra ou qualquer de seus elementos estiver em <a href="http://wiki.creativecommons.org/Public_domain">domínio público</a> sob o direito aplicável, esta condição não é, de maneira alguma, afetada pela licença. 
+Outros Direitos — Os seguintes direitos não são, de maneira alguma, afetados pela licença: 
+Limitações e exceções aos direitos autorais ou quaisquer <a href="http://wiki.creativecommons.org/Frequently_Asked_Questions#Do_Creative_Commons_licenses_affect_fair_use.2C_fair_dealing_or_other_exceptions_to_copyright.3F">usos livres</a> aplicáveis; 
+Os <a href="http://wiki.creativecommons.org/Frequently_Asked_Questions#I_don.E2.80.99t_like_the_way_a_person_has_used_my_work_in_a_derivative_work_or_included_it_in_a_collective_work.3B_what_can_I_do.3F">direitos morais</a> do autor; 
+Direitos que outras pessoas podem ter sobre a obra ou sobre a utilização da obra, tais como <a href="http://wiki.creativecommons.org/Frequently_Asked_Questions#When_are_publicity_rights_relevant.3F">direitos de imagem</a> ou privacidade. 
+Aviso — Para qualquer reutilização ou distribuição, você deve deixar claro a terceiros os termos da licença a que se encontra submetida esta obra. A melhor maneira de fazer isso é com um link para esta página. </p>
+
+<h1>
+<a name="2---introdu%C3%A7%C3%A3o-ao-sistema-e-cidade" class="anchor" href="#2---introdu%C3%A7%C3%A3o-ao-sistema-e-cidade"><span class="octicon octicon-link"></span></a>2 - Introdução ao Sistema e-cidade</h1>
+
+<p>O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
+A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. </p>
+
+<h2>
+<a name="21---caracter%C3%ADsticas" class="anchor" href="#21---caracter%C3%ADsticas"><span class="octicon octicon-link"></span></a>2.1 - Características</h2>
+
+<p>O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: <a href="http://www.softwarepublico.gov.br">www.softwarepublico.gov.br</a>. 
+O sistema possui a seguinte plataforma tecnológica:</p>
+
+<p>LINUX
+<br>APACHE – PHP
+<br>POSTGRESQL – PSQL
+<br>FPDF
+<br>AGATA – API
+<br>FIREFOX
+<br>HTML / CSS / JAVASCRIPT
+JAVA TOMCAT
+<br>ECLIPSE<br></p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png" alt="">  </p>
+
+<h1>
+<a name="3---instala%C3%A7%C3%A3o-do-sistema" class="anchor" href="#3---instala%C3%A7%C3%A3o-do-sistema"><span class="octicon octicon-link"></span></a>3 - Instalação do Sistema</h1>
+
+<h2>
+<a name="31---informa%C3%A7%C3%B5es-gerais-para-instala%C3%A7%C3%A3o" class="anchor" href="#31---informa%C3%A7%C3%B5es-gerais-para-instala%C3%A7%C3%A3o"><span class="octicon octicon-link"></span></a>3.1 - Informações gerais para instalação</h2>
+
+<p>É recomendado que este guia seja executado por um usuário com experiência em instalação de pacotes no Linux e configuração básica de Apache, PHP e PostgreSQL. 
+Este roteiro está baseado no Sistema Operacional GNU/Linux Ubuntu 10.04 LTS. Cabe lembrar que em outras distribuições Linux o processo de instalação pode variar.
+Este manual pressupõe que o servidor de aplicação Web e o banco de dados estarão instalados no mesmo servidor. 
+Neste guia, sempre que necessário editar algum arquivo, será usado o editor de texto GEDIT. Mas cabe lembrar que é apenas uma opção, existem outros editores como o VIM.</p>
+
+<h1>
+<a name="4---passo-a-passo-da-instala%C3%A7%C3%A3o" class="anchor" href="#4---passo-a-passo-da-instala%C3%A7%C3%A3o"><span class="octicon octicon-link"></span></a>4 - Passo-a-passo da Instalação</h1>
+
+<h2>
+<a name="41---instalando-e-configurando-o-servidor-web-apache2" class="anchor" href="#41---instalando-e-configurando-o-servidor-web-apache2"><span class="octicon octicon-link"></span></a>4.1 - Instalando e configurando o Servidor WEB Apache2</h2>
+
+<p>Para instalar o Apache2, execute o seguinte comando:
+<br><code>sudo apt-get install apache2</code></p>
+
+<p>Agora é necessário alterar o arquivo /etc/apache2/apache2.conf. Usando o gedit, é possível editar as informações desse arquivo executando o comando:
+<br><code>sudo gedit /etc/apache2/apache2.conf</code></p>
+
+<p>Altere o valor do parâmetro Timeout:
+<br><code>Timeout 12000</code></p>
+
+<p>Além disso, adicione as seguintes linhas ao final desse arquivo:
+<br><code># linhas adicionadas para o e-cidade</code>
+<br><code>LimitRequestLine 16382</code>
+<br><code>LimitRequestFieldSize 16382</code></p>
+
+<p>Agora, altere o arquivo /etc/apache2/conf.d/charset. Usando o gedit faça assim:
+<br><code>sudo gedit /etc/apache2/conf.d/charset</code></p>
+
+<p>Altere o valor do parâmetro AddDefaultCharset:
+<br><code>AddDefaultCharset ISO-8859-1</code></p>
+
+<p>Caso a linha desse parâmetro esteja comentada, ou seja, iniciando com o caractere '#', remova este.</p>
+
+<p>Deverá ser criada uma pasta de arquivos temporários. Crie a pasta “tmp” no DOCUMENT_ROOT do Apache (/var/www), da seguinte maneira:
+<br><code>sudo mkdir /var/www/tmp</code>
+<br><code>sudo chown -R www-data.www-data /var/www/tmp</code>
+<br><code>sudo chmod -R 777 /var/www/tmp</code></p>
+
+<p>Adicione o usuário que irá administrar o e-cidade no grupo “www-data”. Esse usuário varia de acordo com sua instalação. No caso desse manual foi criado um usuário chamado “usuario1”. Deve-se editar o seguinte arquivo:
+<br><code>sudo gedit /etc/group</code></p>
+
+<p>Adicione a seguinte linha (onde “usuario1” deve ser trocado pelo seu usuário criado na instalação do Ubuntu):
+<br><code>www-data:x:33:usuario1</code></p>
+
+<h2>
+<a name="42---instalando-o-php-5" class="anchor" href="#42---instalando-o-php-5"><span class="octicon octicon-link"></span></a>4.2 - Instalando o PHP 5</h2>
+
+<p>Execute o seguinte comando para instalar os pacotes necessários:
+<br><code>sudo apt-get install php5 php5-gd php5-pgsql php5-cli php5-mhash php5-mcrypt</code></p>
+
+<p>Crie a pasta para os logs do PHP5:
+<br><code>sudo mkdir /var/www/log</code>
+<br><code>sudo chown -R www-data.www-data /var/www/log</code></p>
+
+<p>Agora é necessário editar o arquivo /etc/php5/apache2/php.ini:
+<br><code>sudo gedit /etc/php5/apache2/php.ini</code></p>
+
+<p>Modifique os seguintes parâmetros:</p>
+
+<p><code>register_globals = On</code>
+<br><code>register_long_arrays = On</code>
+<br><code>register_argc_argv = On</code>
+<br><code>post_max_size = 64M</code>
+<br><code>magic_quotes_gpc = On</code>
+<br><code>upload_max_filesize = 64M</code>
+<br><code>default_socket_timeout = 60000</code>
+<br><code>max_execution_time = 60000</code>
+<br><code>max_input_time = 60000</code>
+<br><code>memory_limit = 512M</code>
+<br><code>allow_call_time_pass_reference = On</code>
+<br><code>error_reporting = E_ALL &amp; ~E_NOTICE</code>
+<br><code>display_errors = Off</code>
+<br><code>log_errors = On</code>
+<br><code>error_log = /var/www/log/php-scripts.log</code>(retirar o ponto e vírgula da frente da linha) 
+<br><code>session.gc_maxlifetime = 7200</code></p>
+
+<p>Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o caractere '#', remova este.</p>
+
+<h2>
+<a name="43---instalando-o-postgresql-82" class="anchor" href="#43---instalando-o-postgresql-82"><span class="octicon octicon-link"></span></a>4.3 - Instalando o PostgreSQL 8.2</h2>
+
+<p>Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o PostgreSQL versão 8.2.
+Para conseguir baixar essa versão, edite o arquivo /etc/apt/sources.list:
+<code>sudo gedit /etc/apt/sources.list</code></p>
+
+<p>Acrescente a seguinte linha ao final do arquivo:</p>
+
+<p><code>deb http://br.archive.ubuntu.com/ubuntu hardy main universe</code></p>
+
+<p>Agora, para instalar o PostgreSQL 8.2 deve-se executar os seguintes comandos:</p>
+
+<p><code>sudo apt-get update</code><br><code>sudo apt-get install postgresql-8.2</code></p>
+
+<p><strong>Configurando o Cluster.</strong></p>
+
+<p>Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do PostgreSQL 8.2 onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:</p>
+
+<p><code>sudo gedit /etc/postgresql/8.2/main/pg_hba.conf</code></p>
+
+<p>Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
+<code>local all all                trust</code>
+<br><code>host all all 127.0.0.1/32    trust</code>
+<br><code>host all all ::1/128         trust</code></p>
+
+<p>Recarregue as configurações do PostgreSQL:</p>
+
+<p><code>sudo /etc/init.d/postgresql-8.2 reload</code></p>
+
+<p>Verifique o cluster atual:</p>
+
+<p><code>psql -U postgres -hlocalhost -l</code></p>
+
+<p>Veja se o comando retorna o seguinte resultado: </p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/6.png" alt="">  </p>
+
+<p>No caso acima precisamos recriar o cluster executando os próximos passos:</p>
+
+<p>Remova o cluster atual:
+<br><code>sudo pg_dropcluster -stop 8.2 main</code></p>
+
+<p>Crie o novo cluster como LATIN1:
+<br><code>sudo pg_createcluster -e LATIN1 8.2 main</code></p>
+
+<p>Inicie o PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 start</code></p>
+
+<p>Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+<br><code>sudo gedit /etc/postgresql/8.2/main/pg_hba.conf</code></p>
+
+<p>Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
+<br><code>local all all                trust</code>
+<br><code>host all all 127.0.0.1/32    trust</code>
+<br><code>host all all ::1/128         trust</code></p>
+
+<p>Recarregue as configurações do PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 reload</code></p>
+
+<p>Novamente, verifique o encoding do cluster:
+<br><code>psql -U postgres -hlocalhost -l</code></p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/7.png" alt="">  </p>
+
+<p><strong><em>ATENÇÃO! Se o resultado do seu comando foi a tabela mostrada acima, pule os próximos passos, indo direto para a parte “Configurando o PostgreSQL 8.2”. Caso o resultado do comando seja algo diferente da tabela acima, então o sistema operacional instalado está sem suporte ao encoding LATIN1. Assim, será necessário realizar os passos abaixo:</em></strong></p>
+
+<p>Edite o arquivo /var/lib/locales/support.d/local
+<br><code>sudo gedit /var/lib/locales/support.d/local</code></p>
+
+<p>Adicione:
+<br><code>pt_BR.ISO-8859-1 ISO-8859-1</code></p>
+
+<p>Edite o arquivo /etc/locale.alias:
+<br><code>sudo gedit /etc/locale.alias</code></p>
+
+<p>Adicione: 
+<br><code>pt_BR pt_BR.ISO-8859-1</code></p>
+
+<p>Reconfigure o locales:
+<br><code>&lt;/br&gt;sudo dpkg-reconfigure locales</code>
+<br><code>export LANG=pt_BR.ISO-8859-1</code>
+<br><code>sudo pg_createcluster -e LATIN1 8.2 main</code></p>
+
+<p>Inicie o servidor PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 start</code></p>
+
+<p>Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+<br><code>sudo gedit /etc/postgresql/8.2/main/pg_hba.conf</code></p>
+
+<p>Altere as linhas ao final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
+<br><code>local all all                trust</code>
+<br><code>host all all 127.0.0.1/32    trust</code>
+<br><code>host all all ::1/128         trust</code></p>
+
+<p>Recarregue as configurações do PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 reload</code></p>
+
+<p>Verifique o encoding:
+<br><code>psql -U postgres -h localhost -l</code></p>
+
+<p>O resultado deve ser o seguinte:</p>
+
+<p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/8.png" alt="">  </p>
+
+<p><strong>Configurando o PostgreSQL 8.2</strong>
+É necessário modificar o arquivo postgresql.conf:
+<br><code>sudo gedit /etc/postgresql/8.2/main/postgresql.conf</code></p>
+
+<p>Altere os seguintes parâmetros (o restante dos parâmetros ficam inalterados):</p>
+
+<p><code>max_fsm_pages = 81000</code>
+<br><code>max_fsm_relations = 5000</code>
+<br><code>checkpoint_segments = 16</code>
+<br><code>redirect_stderr = on</code> 
+<br><code>log_directory = 'pg_log'</code> 
+<br><code>log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'</code>
+<br><code>log_min_messages = warning</code>
+<br><code>log_min_duration_statement = 5000 # 5 segundos</code>
+<br><code>log_line_prefix = '%t [%p]: [%l-1] user=%u,db=%d'</code>
+<br><code>autovacuum_naptime = 5min</code>
+<br><code>autovacuum_vacuum_threshold = 50</code>
+<br><code>autovacuum_analyze_threshold = 50</code>
+<br><code>autovacuum_vacuum_cost_delay = 20</code>
+<br><code>add_missing_from = on</code>
+<br><code>default_with_oids = on</code><br><code>escape_string_warning = off</code></p>
+
+<p>Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o caractere '#', remova este.</p>
+
+<p>Reinicie o PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 restart</code></p>
+
+<p>Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+<br><code>sudo gedit /etc/postgresql/8.2/main/pg_hba.conf</code></p>
+
+<p>Alterar as linhas no final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
+<br><code>local all all                trust</code>
+<br><code>host all all 127.0.0.1/32    trust</code>
+<br><code>host all all ::1/128         trust</code></p>
+
+<p>Recarregue as configurações do PostgreSQL:
+<br><code>sudo /etc/init.d/postgresql-8.2 reload</code></p>
+
+<h2>
+<a name="44---instala%C3%A7%C3%A3o-do-openoffice" class="anchor" href="#44---instala%C3%A7%C3%A3o-do-openoffice"><span class="octicon octicon-link"></span></a>4.4 - Instalação do OpenOffice</h2>
+
+<p>Altere o arquivo sources.list:
+<br><code>sudo gedit /etc/apt/sources.list</code></p>
+
+<p>Remova a seguinte linha que adicionamos no passo de instalação do 
+PostgreSQL:
+<br><code>deb http://br.archive.ubuntu.com/ubuntu hardy main universe</code></p>
+
+<p>Adicione a seguinte linha:
+<br><code>deb http://archive.canonical.com/ lucid partner</code></p>
+
+<p>Atualize o repositório:
+<br><code>sudo apt-get update</code></p>
+
+<p>Para instalar o OpenOffice basta executar:
+<br><code>sudo apt-get install openoffice.org-headless openoffice.org-java-common sun-java6-jre</code></p>
+
+<p>Altere o arquivo /etc/rc.local/:
+<br><code>sudo gedit /etc/rc.local</code></p>
+
+<p>Adicione o seguinte texto antes da linha que contém “exit 0”:
+<br><code>/usr/bin/soffice -accept="socket,host=localhost,port=8100;urp;" - nofirststartwizard -headless &amp; exit 0</code></p>
+
+<h2>
+<a name="45---configura%C3%A7%C3%A3o-do-e-cidade" class="anchor" href="#45---configura%C3%A7%C3%A3o-do-e-cidade"><span class="octicon octicon-link"></span></a>4.5 - Configuração do e-cidade</h2>
+
+<p>Nesse manual será instalada a versão 2.2.28 da solução, cujo pacote "e-cidade-2.2.28-linux.completo.tar.bz2" deverá ser baixado através do Portal do Software Público, comunidade e-cidade (use o pacote que está na pasta “Pacotes disponíveis” - em Armazenagem de Arquivos). Baixe o pacote e coloque na pasta /tmp.
+Feito isso, acesse a pasta /tmp:</p>
+
+<p><code>cd /tmp</code> </p>
+
+<p>Extraia o pacote:</p>
+
+<p><code>sudo tar jxvf  e-cidade-2.2.28-linux.completo.tar-22075083.bz2</code></p>
+
+<p><strong>Criação da base de dados (chamaremos a base de "e-cidade").</strong></p>
+
+<p>Acesse a seguinte pasta:</p>
+
+<p><code>cd e-cidade-2.2.28-linux.completo/sql/</code></p>
+
+<p>Crie o usuário dbportal do postgres:</p>
+
+<p><code>psql -U postgres -hlocalhost template1 -c "create role dbportal with superuser login password 'dbportal'"</code></p>
+
+<p>Crie o usuário dbseller do postgres: </p>
+
+<p><code>psql -U postgres -h localhost template1 -c "create role dbseller with login password 'dbseller'"</code></p>
+
+<p>Execute o seguinte comando para criar o banco:</p>
+
+<p><code>createdb -U dbportal e-cidade</code></p>
+
+<p>Para importar os comandos. SQL de criação da estrutura de dados, execute:</p>
+
+<p><code>psql -U dbportal e-cidade -f e-cidade-demo-2.2.28.sql</code></p>
+
+<h2>
+<a name="46-disponibiliza%C3%A7%C3%A3o-do-e-cidade" class="anchor" href="#46-disponibiliza%C3%A7%C3%A3o-do-e-cidade"><span class="octicon octicon-link"></span></a>4.6 Disponibilização do e-cidade</h2>
+
+<p>Acesse o pacote e copie os arquivos do e-cidade para a pasta do Apache2:</p>
+
+<p><code>cd /tmp/e-cidade-2.2.28-linux.completo</code></p>
+
+<p><code>sudo cp -r e-cidade /var/www</code></p>
+
+<p>Ajuste as permissões da pasta /var/www/e-cidade:</p>
+
+<p><code>sudo chown -R usuario1.www-data /var/www/e-cidade</code></p>
+
+<p><code>sudo chmod -R 775 /var/www/e-cidade</code></p>
+
+<p><code>sudo chmod -R 777 /var/www/e-cidade/tmp</code></p>
+
+<p>Lembre-se que “usuario1” varia de acordo com sua instalação e usuário utilizado.</p>
+
+<p>Confira o arquivo de configuração da base de dados:</p>
+
+<p><code>sudo gedit /var/www/e-cidade/libs/db_conn.php</code> </p>
+
+<p>As variáveis devem estar da seguinte maneira:</p>
+
+<p><code>$DB_USUARIO = “dbportal”;</code></p>
+
+<p><code>$DB_SENHA = “”; // Ou alguma senha, se foi definida para o usuário dbportal no postgresql</code> </p>
+
+<p><code>$DB_SERVIDOR = “localhost”;</code></p>
+
+<p><code>$DB_PORTA = “5432”;</code></p>
+
+<p><code>$DB_PORTA_ALT = “5432”;</code> </p>
+
+<p><code>$DB_BASE = “e-cidade”;</code></p>
+
+<h2>
+<a name="47---acesso-ao-e-cidade" class="anchor" href="#47---acesso-ao-e-cidade"><span class="octicon octicon-link"></span></a>4.7 - Acesso ao e-cidade</h2>
+
+<p>Se você optou por instalar o ambiente gráfico, então basta abrir o navegador Firefox e acessar o seguinte endereço:</p>
+
+<p><code>http://localhost/e-cidade</code></p>
+
+<p>Caso você tenha instalado o servidor sem ambiente gráfico, então apartir de um computador desktop abra o navegador Firefox e acesse o seguinte endereço:</p>
+
+<p><code>http://&lt;ip_do_servidor&gt;/e-cidade</code></p>
+
+<p><code>Onde “ip_do_servidor” indica o entereço IP atribuído na instalação do servidor Ubuntu.</code></p>
+
+<p>Na tela de login do e-cidade informar o usuário “dbseller” e deixar a senha em branco.</p>
+
+<p><code>**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas “pop-up” desbloqueadas para o IP do Servidor.**</code></p>
+
+<p>Compatibilidade das versões do Firefox:</p>
+
+<p>O e-cidade é compatível com a versão 3.0 ou inferior do Mozilla Firefox.</p>
+
+<p>Para tornar o e-cidade compatível com as demais versões do Firefox é necessário editar o seguinte arquivo:
+sudo gedit  /var/www/e-cidade/config/require_extensions.xml</p>
+
+<p>Onde está assim:</p>
+
+<p></p>
+
+<p>Deverá ficar da seguinte maneira:</p>
+
+<p></p>
+
+<p>Reinicie o Apache:</p>
+
+<p><code>sudo /etc/init.d/apache2 restart</code></p>
+
+<h2>
+<a name="48---disponibiliza%C3%A7%C3%A3o-do-e-cidade-online" class="anchor" href="#48---disponibiliza%C3%A7%C3%A3o-do-e-cidade-online"><span class="octicon octicon-link"></span></a>4.8 - Disponibilização do “e-cidade online”</h2>
+
+<p>O pacote e-cidadeonline é o serviço disponível ao cidadão.</p>
+
+<p>Acesse o pacote onde estão os arquivos do e-cidade:</p>
+
+<p><code>cd /tmp/e-cidade-2.2.28-linux.completo</code></p>
+
+<p>Copie os arquivos do e-cidade online para a pasta do Apache2:</p>
+
+<p><code>sudo cp -r e-cidadeonline /var/www</code></p>
+
+<p>Ajuste as permissões da pasta:</p>
+
+<p><code>sudo chown -R usuario1.www-data /var/www/e-cidadeonline</code></p>
+
+<p><code>sudo chmod -R 775 /var/www/e-cidadeonline</code></p>
+
+<p><code>sudo chmod -R 777 /var/www/e-cidadeonline/tmp</code></p>
+
+<p>Confira o arquivo de configuração da base de dados:</p>
+
+<p>sudo gedit /var/www/e-cidadeonline/libs/db_conn.php </p>
+
+<p>As variáveis devem estar da seguinte maneira:</p>
+
+<p><code>$DB_INSTITUICAO = 1;</code></p>
+
+<p><code>$DB_SENHA='; // Ou se for definida alguma senha para o usuario dbportal no postgresql</code></p>
+
+<p><code>$DB_SERVIDOR = 'localhost';</code></p>
+
+<p><code>$DB_PORTA= '5432';</code></p>
+
+<p><code>$DB_BASEDADOS = 'e-cidade';</code></p>
+
+<p>Para acessar o e-cidade online, entre no seguinte endereço :</p>
+
+<p><code>http://&lt;ip_do_servidor&gt;/e-cidadeonline</code></p>
+
+<h1>
+<a name="5---link-da-licen%C3%A7a-j%C3%BAridica-creative-commons" class="anchor" href="#5---link-da-licen%C3%A7a-j%C3%BAridica-creative-commons"><span class="octicon octicon-link"></span></a>5 - Link da Licença Júridica Creative Commons</h1>
+
+<p><a href="http://creativecommons.org/licenses/by-sa/2.0/br/legalcode">http://creativecommons.org/licenses/by-sa/2.0/br/legalcode</a></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/admin-softwarepublicobrasileiro">admin-softwarepublicobrasileiro</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
