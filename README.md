@@ -4,15 +4,15 @@ Para a utilização deste documento é necessário seguir as regras da licença 
 
 Você tem a liberdade de:
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/1b.png) &nbsp; Compartilhar — copiar, distribuir e transmitir a obra.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png) &nbsp; Compartilhar — copiar, distribuir e transmitir a obra.
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/2.png) &nbsp; Remixar — criar obras derivadas.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png) &nbsp; Remixar — criar obras derivadas.
 
 Sob as seguintes condições:
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/3.png) &nbsp;Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp;Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/4.png) &nbsp;Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp;Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
 
 Ficando claro que:
 Renúncia — Qualquer das condições acima pode ser [renunciada](http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#) se você obtiver permissão do titular dos direitos autorais. 
@@ -42,7 +42,7 @@ LINUX
 JAVA TOMCAT</br>
 <br>ECLIPSE<br>
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/5.png) &nbsp;
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png) &nbsp;
 
 
 #3 - Instalação do Sistema
@@ -160,7 +160,7 @@ Verifique o cluster atual:
 
 Veja se o comando retorna o seguinte resultado:	
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/6.png) &nbsp;
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/6.png) &nbsp;
 
 No caso acima precisamos recriar o cluster executando os próximos passos:
 
@@ -187,7 +187,7 @@ Recarregue as configurações do PostgreSQL:
 Novamente, verifique o encoding do cluster:
 <br>`psql -U postgres -hlocalhost -l`</br>
 		
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/7.png) &nbsp;
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/7.png) &nbsp;
 
 ***ATENÇÃO! Se o resultado do seu comando foi a tabela mostrada acima, pule os próximos passos, indo direto para a parte “Configurando o PostgreSQL 8.2”. Caso o resultado do comando seja algo diferente da tabela acima, então o sistema operacional instalado está sem suporte ao encoding LATIN1. Assim, será necessário realizar os passos abaixo:***
 
@@ -227,7 +227,7 @@ Verifique o encoding:
 	
 O resultado deve ser o seguinte:
 
-![](https://raw.github.com/marcuslobo/manualecidades/master/imagens/7.png) &nbsp;
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/8.png) &nbsp;
 
 **Configurando o PostgreSQL 8.2**
 É necessário modificar o arquivo postgresql.conf:
