@@ -65,65 +65,77 @@ Para instalar o Apache2, execute o seguinte comando:
 	sudo apt-get install apache2
 
 Agora é necessário alterar o arquivo /etc/apache2/apache2.conf. Usando o gedit, é possível editar as informações desse arquivo executando o comando:
-<br>`sudo gedit /etc/apache2/apache2.conf`</br>
+
+	sudo gedit /etc/apache2/apache2.conf
 
 Altere o valor do parâmetro Timeout:
-<br>`Timeout 12000`</br>
 
+	Timeout 12000
+	
 Além disso, adicione as seguintes linhas ao final desse arquivo:
-<br>`# linhas adicionadas para o e-cidade`</br>
-<br>`LimitRequestLine 16382`</br>
-<br>`LimitRequestFieldSize 16382`</br>
+
+# linhas adicionadas para o e-cidade
+
+	LimitRequestLine 16382
+	LimitRequestFieldSize 16382
 
 Agora, altere o arquivo /etc/apache2/conf.d/charset. Usando o gedit faça assim:
-<br>`sudo gedit /etc/apache2/conf.d/charset`</br>
 
+	sudo gedit /etc/apache2/conf.d/charset
+	
 Altere o valor do parâmetro AddDefaultCharset:
-<br>`AddDefaultCharset ISO-8859-1`</br>
+
+	AddDefaultCharset ISO-8859-1
 
 Caso a linha desse parâmetro esteja comentada, ou seja, iniciando com o caractere '#', remova este.
 
 Deverá ser criada uma pasta de arquivos temporários. Crie a pasta “tmp” no DOCUMENT_ROOT do Apache (/var/www), da seguinte maneira:
-<br>`sudo mkdir /var/www/tmp`</br>
-<br>`sudo chown -R www-data.www-data /var/www/tmp`</br>
-<br>`sudo chmod -R 777 /var/www/tmp`</br>
+
+	sudo mkdir /var/www/tmp
+	sudo chown -R www-data.www-data /var/www/tmp
+	sudo chmod -R 777 /var/www/tmp
 
 Adicione o usuário que irá administrar o e-cidade no grupo “www-data”. Esse usuário varia de acordo com sua instalação. No caso desse manual foi criado um usuário chamado “usuario1”. Deve-se editar o seguinte arquivo:
-<br>`sudo gedit /etc/group`</br>
+
+	sudo gedit /etc/group
 
 Adicione a seguinte linha (onde “usuario1” deve ser trocado pelo seu usuário criado na instalação do Ubuntu):
-<br>`www-data:x:33:usuario1`</br>
+	
+	www-data:x:33:usuario1
 
 ## 4.2 - Instalando o PHP 5
 
 Execute o seguinte comando para instalar os pacotes necessários:
-<br>`sudo apt-get install php5 php5-gd php5-pgsql php5-cli php5-mhash php5-mcrypt`</br>
+
+	sudo apt-get install php5 php5-gd php5-pgsql php5-cli php5-mhash php5-mcrypt
 
 Crie a pasta para os logs do PHP5:
-<br>`sudo mkdir /var/www/log`</br>
-<br>`sudo chown -R www-data.www-data /var/www/log`</br>
+
+	sudo mkdir /var/www/log
+	sudo chown -R www-data.www-data /var/www/log
 
 Agora é necessário editar o arquivo /etc/php5/apache2/php.ini:
-<br>`sudo gedit /etc/php5/apache2/php.ini`</br>
+
+	sudo gedit /etc/php5/apache2/php.ini	
 
 Modifique os seguintes parâmetros:
 
-`register_globals = On`
-<br>`register_long_arrays = On`</br>
-<br>`register_argc_argv = On`</br>
-<br>`post_max_size = 64M`</br>
-<br>`magic_quotes_gpc = On`</br>
-<br>`upload_max_filesize = 64M`</br>
-<br>`default_socket_timeout = 60000`</br>
-<br>`max_execution_time = 60000`</br>
-<br>`max_input_time = 60000`</br>
-<br>`memory_limit = 512M`</br>
-<br>`allow_call_time_pass_reference = On`</br>
-<br>`error_reporting = E_ALL & ~E_NOTICE`</br>
-<br>`display_errors = Off`</br>
-<br>`log_errors = On`</br>
-<br>`error_log = /var/www/log/php-scripts.log`(retirar o ponto e vírgula da frente da linha)</br> 
-<br>`session.gc_maxlifetime = 7200`</br>
+	register_globals = On
+	register_long_arrays = On
+	register_argc_argv = On
+	post_max_size = 64M
+	magic_quotes_gpc = On
+	upload_max_filesize = 64M
+	default_socket_timeout = 60000
+	max_execution_time = 60000
+	max_input_time = 60000
+	memory_limit = 512M
+	allow_call_time_pass_reference = On
+	error_reporting = E_ALL & ~E_NOTICE
+	display_errors = Off
+	log_errors = On
+	error_log = /var/www/log/php-scripts.log(retirar o ponto e vírgula da frente da linha)
+	session.gc_maxlifetime = 7200
 
 Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o caractere '#', remova este.
 
@@ -131,35 +143,37 @@ Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o car
 
 Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o PostgreSQL versão 8.2.
 Para conseguir baixar essa versão, edite o arquivo /etc/apt/sources.list:
-`sudo gedit /etc/apt/sources.list`
+
+	sudo gedit /etc/apt/sources.list
 
 Acrescente a seguinte linha ao final do arquivo:
 
-`deb http://br.archive.ubuntu.com/ubuntu hardy main universe`
+	deb http://br.archive.ubuntu.com/ubuntu hardy main universe
   
 Agora, para instalar o PostgreSQL 8.2 deve-se executar os seguintes comandos:
 
-`sudo apt-get update`<br>
-`sudo apt-get install postgresql-8.2`
+	sudo apt-get update
+	sudo apt-get install postgresql-8.2
   
 **Configurando o Cluster.**
 
 Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do PostgreSQL 8.2 onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
 
-`sudo gedit /etc/postgresql/8.2/main/pg_hba.conf`
+	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
 Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
-`local all all                trust`
-<br>`host all all 127.0.0.1/32    trust`</br>
-<br>`host all all ::1/128         trust`</br>
+
+	local all all                trust
+	host all all 127.0.0.1/32    trust
+	host all all ::1/128         trust
 		
 Recarregue as configurações do PostgreSQL:
 
-`sudo /etc/init.d/postgresql-8.2 reload`
+	sudo /etc/init.d/postgresql-8.2 reload
 	
 Verifique o cluster atual:
 
-`psql -U postgres -hlocalhost -l`
+	psql -U postgres -hlocalhost -l
 
 Veja se o comando retorna o seguinte resultado:	
 
@@ -168,65 +182,82 @@ Veja se o comando retorna o seguinte resultado:
 No caso acima precisamos recriar o cluster executando os próximos passos:
 
 Remova o cluster atual:
-<br>`sudo pg_dropcluster -stop 8.2 main`</br>
+
+	sudo pg_dropcluster -stop 8.2 main
 			
 Crie o novo cluster como LATIN1:
-<br>`sudo pg_createcluster -e LATIN1 8.2 main`</br>
+
+	sudo pg_createcluster -e LATIN1 8.2 main
 	
 Inicie o PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 start`</br>
+
+	sudo /etc/init.d/postgresql-8.2 start
 		
 Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
-<br>`sudo gedit /etc/postgresql/8.2/main/pg_hba.conf`</br>
+
+	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
 Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
-<br>`local all all                trust`</br>
-<br>`host all all 127.0.0.1/32    trust`</br>
-<br>`host all all ::1/128         trust`</br>
+
+	local all all                trust
+	host all all 127.0.0.1/32    trust
+	host all all ::1/128         trust
 	
 Recarregue as configurações do PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 reload`</br>
+
+	sudo /etc/init.d/postgresql-8.2 reload
 
 Novamente, verifique o encoding do cluster:
-<br>`psql -U postgres -hlocalhost -l`</br>
+
+	psql -U postgres -hlocalhost -l
 		
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/7.png) &nbsp;
 
 ***ATENÇÃO! Se o resultado do seu comando foi a tabela mostrada acima, pule os próximos passos, indo direto para a parte “Configurando o PostgreSQL 8.2”. Caso o resultado do comando seja algo diferente da tabela acima, então o sistema operacional instalado está sem suporte ao encoding LATIN1. Assim, será necessário realizar os passos abaixo:***
 
 Edite o arquivo /var/lib/locales/support.d/local
-<br>`sudo gedit /var/lib/locales/support.d/local`</br>
+
+	sudo gedit /var/lib/locales/support.d/local
 
 Adicione:
-<br>`pt_BR.ISO-8859-1 ISO-8859-1`</br>
+
+	pt_BR.ISO-8859-1 ISO-8859-1
 
 Edite o arquivo /etc/locale.alias:
-<br>`sudo gedit /etc/locale.alias`</br>
+
+	sudo gedit /etc/locale.alias
 
 Adicione: 
-<br>`pt_BR pt_BR.ISO-8859-1`</br>
+
+	pt_BR pt_BR.ISO-8859-1
 
 Reconfigure o locales:
-<br>`</br>sudo dpkg-reconfigure locales`
-<br>`export LANG=pt_BR.ISO-8859-1 `</br>
-<br>`sudo pg_createcluster -e LATIN1 8.2 main`</br>
+
+	sudo dpkg-reconfigure locales
+	export LANG=pt_BR.ISO-8859-1
+	sudo pg_createcluster -e LATIN1 8.2 main
 
 Inicie o servidor PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 start`</br>
+
+	sudo /etc/init.d/postgresql-8.2 start
 
 Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
-<br>`sudo gedit /etc/postgresql/8.2/main/pg_hba.conf`</br>
+
+	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
 Altere as linhas ao final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
-<br>`local all all                trust`</br>
-<br>`host all all 127.0.0.1/32    trust`</br>
-<br>`host all all ::1/128         trust`</br>
+
+	local all all                trust
+	host all all 127.0.0.1/32    trust
+	host all all ::1/128         trust
 	
 Recarregue as configurações do PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 reload`</br>
+
+	sudo /etc/init.d/postgresql-8.2 reload
 
 Verifique o encoding:
-<br>`psql -U postgres -h localhost -l`</br>
+
+	psql -U postgres -h localhost -l
 	
 O resultado deve ser o seguinte:
 
@@ -234,120 +265,133 @@ O resultado deve ser o seguinte:
 
 **Configurando o PostgreSQL 8.2**
 É necessário modificar o arquivo postgresql.conf:
-<br>`sudo gedit /etc/postgresql/8.2/main/postgresql.conf`</br>
+
+	sudo gedit /etc/postgresql/8.2/main/postgresql.conf
 
 Altere os seguintes parâmetros (o restante dos parâmetros ficam inalterados):
 
-`max_fsm_pages = 81000 `
-<br>`max_fsm_relations = 5000`</br>
-<br>`checkpoint_segments = 16`</br>
-<br>`redirect_stderr = on`</br> 
-<br>`log_directory = 'pg_log'`</br> 
-<br>`log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'`</br>
-<br>`log_min_messages = warning`</br>
-<br>`log_min_duration_statement = 5000 # 5 segundos`</br>
-<br>`log_line_prefix = '%t [%p]: [%l-1] user=%u,db=%d'`</br>
-<br>`autovacuum_naptime = 5min `</br>
-<br>`autovacuum_vacuum_threshold = 50`</br>
-<br>`autovacuum_analyze_threshold = 50 `</br>
-<br>`autovacuum_vacuum_cost_delay = 20`</br>
-<br>`add_missing_from = on `</br>
-<br>`default_with_oids = on `</br>     
-`escape_string_warning = off`
+	max_fsm_pages = 81000
+	max_fsm_relations = 5000
+	checkpoint_segments = 16
+	redirect_stderr = on
+	log_directory = 'pg_log
+	log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+	log_min_messages = warning
+	log_min_duration_statement = 5000 # 5 segundos
+	log_line_prefix = '%t [%p]: [%l-1] user=%u,db=%d'
+	autovacuum_naptime = 5min
+	autovacuum_vacuum_threshold = 50
+	autovacuum_analyze_threshold = 50
+	autovacuum_vacuum_cost_delay = 20
+	add_missing_from = on
+	default_with_oids = on  
+	escape_string_warning = off
 
 Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o caractere '#', remova este.
 
 Reinicie o PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 restart`</br>
+
+	sudo /etc/init.d/postgresql-8.2 restart
 	
 Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
-<br>`sudo gedit /etc/postgresql/8.2/main/pg_hba.conf`</br>
+
+	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
 Alterar as linhas no final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
-<br>`local all all                trust`</br>
-<br>`host all all 127.0.0.1/32    trust`</br>
-<br>`host all all ::1/128         trust`</br>
+
+	local all all                trust
+	host all all 127.0.0.1/32    trust
+	host all all ::1/128         trust
 		
 Recarregue as configurações do PostgreSQL:
-<br>`sudo /etc/init.d/postgresql-8.2 reload`</br>
+
+	sudo /etc/init.d/postgresql-8.2 reload
 
 ## 4.4 - Instalação do OpenOffice
 
 Altere o arquivo sources.list:
-<br>`sudo gedit /etc/apt/sources.list`</br>
+
+	sudo gedit /etc/apt/sources.list
 
 Remova a seguinte linha que adicionamos no passo de instalação do 
 PostgreSQL:
-<br>`deb http://br.archive.ubuntu.com/ubuntu hardy main universe`</br>
+	
+	deb http://br.archive.ubuntu.com/ubuntu hardy main universe
 
 Adicione a seguinte linha:
-<br>`deb http://archive.canonical.com/ lucid partner`</br>
+	
+	deb http://archive.canonical.com/ lucid partner
 
 Atualize o repositório:
-<br>`sudo apt-get update`</br>
+	
+	sudo apt-get update
 
 Para instalar o OpenOffice basta executar:
-<br>`sudo apt-get install openoffice.org-headless openoffice.org-java-common sun-java6-jre`</br>
+	
+	sudo apt-get install openoffice.org-headless openoffice.org-java-common sun-java6-jre
 
 Altere o arquivo /etc/rc.local/:
-<br>`sudo gedit /etc/rc.local`</br>
+	
+	sudo gedit /etc/rc.local
 
 Adicione o seguinte texto antes da linha que contém “exit 0”:
-<br>`/usr/bin/soffice -accept="socket,host=localhost,port=8100;urp;" - nofirststartwizard -headless & exit 0`</br>
+	
+	/usr/bin/soffice -accept="socket,host=localhost,port=8100;urp;" - nofirststartwizard -headless & exit 0
 
 ## 4.5 - Configuração do e-cidade
+
 Nesse manual será instalada a versão 2.2.28 da solução, cujo pacote "e-cidade-2.2.28-linux.completo.tar.bz2" deverá ser baixado através do Portal do Software Público, comunidade e-cidade (use o pacote que está na pasta “Pacotes disponíveis” - em Armazenagem de Arquivos). Baixe o pacote e coloque na pasta /tmp.
 Feito isso, acesse a pasta /tmp:
 
-`cd /tmp` 
+	cd /tmp
 	
 Extraia o pacote:
 
-`sudo tar jxvf  e-cidade-2.2.28-linux.completo.tar-22075083.bz2`
+	sudo tar jxvf  e-cidade-2.2.28-linux.completo.tar-22075083.bz2
 	
 **Criação da base de dados (chamaremos a base de "e-cidade").**
 
 Acesse a seguinte pasta:
 
-`cd e-cidade-2.2.28-linux.completo/sql/`
+	cd e-cidade-2.2.28-linux.completo/sql/	
 
 Crie o usuário dbportal do postgres:
 
-`psql -U postgres -hlocalhost template1 -c "create role dbportal with superuser login password 'dbportal'"`
+	psql -U postgres -hlocalhost template1 -c "create role dbportal with superuser login password 'dbportal'"
 
 Crie o usuário dbseller do postgres: 
 
-`psql -U postgres -h localhost template1 -c "create role dbseller with login password 'dbseller'"`
+	psql -U postgres -h localhost template1 -c "create role dbseller with login password 'dbseller'"
 
 Execute o seguinte comando para criar o banco:
 
-`createdb -U dbportal e-cidade`
+	createdb -U dbportal e-cidade
 
 Para importar os comandos. SQL de criação da estrutura de dados, execute:
 
-`psql -U dbportal e-cidade -f e-cidade-demo-2.2.28.sql`
+	psql -U dbportal e-cidade -f e-cidade-demo-2.2.28.sql
 
 ## 4.6 Disponibilização do e-cidade
 
 Acesse o pacote e copie os arquivos do e-cidade para a pasta do Apache2:
 
-`cd /tmp/e-cidade-2.2.28-linux.completo`
+	cd /tmp/e-cidade-2.2.28-linux.completo
 
-`sudo cp -r e-cidade /var/www`
+	sudo cp -r e-cidade /var/www
 
 Ajuste as permissões da pasta /var/www/e-cidade:
 
-`sudo chown -R usuario1.www-data /var/www/e-cidade`
+	sudo chown -R usuario1.www-data /var/www/e-cidade
 
-`sudo chmod -R 775 /var/www/e-cidade`
+	sudo chmod -R 775 /var/www/e-cidade
 
-`sudo chmod -R 777 /var/www/e-cidade/tmp`
+	sudo chmod -R 777 /var/www/e-cidade/tmp
 
 Lembre-se que “usuario1” varia de acordo com sua instalação e usuário utilizado.
 
 Confira o arquivo de configuração da base de dados:
 
-`sudo gedit /var/www/e-cidade/libs/db_conn.php` 
+	sudo gedit /var/www/e-cidade/libs/db_conn.php
 
 As variáveis devem estar da seguinte maneira:
 
