@@ -4,15 +4,15 @@ Para a utilização deste documento é necessário seguir as regras da licença 
 
 Você tem a liberdade de:
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png) &nbsp; Compartilhar — copiar, distribuir e transmitir a obra.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png) &nbsp; <b>Compartilhar</b> — copiar, distribuir e transmitir a obra.
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png) &nbsp; Remixar — criar obras derivadas.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png) &nbsp; <b>Remixar</b> — criar obras derivadas.
 
 Sob as seguintes condições:
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp; Atribuição — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp; <b>Atribuição</b> — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp; Compartilhamento pela mesma licença — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp; <b>Compartilhamento pela mesma licença</b> — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
 
 Ficando claro que:
 Renúncia — Qualquer das condições acima pode ser [renunciada](http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#) se você obtiver permissão do titular dos direitos autorais. 
@@ -34,14 +34,15 @@ O código fonte está disponível para ser baixado livremente no Portal do Softw
 O sistema possui a seguinte plataforma tecnológica:
 
 LINUX
-<br>APACHE – PHP</br>
-<br>POSTGRESQL – PSQL</br>
-<br>FPDF</br>
-<br>AGATA – API</br>
-<br>FIREFOX</br>
-<br>HTML / CSS / JAVASCRIPT</br>
-JAVA TOMCAT</br>
-<br>ECLIPSE<br>
+
+	APACHE – PHP
+	POSTGRESQL – PSQL
+	FPDF
+	AGATA – API
+	FIREFOX
+	HTML / CSS / JAVASCRIPT
+	JAVA TOMCAT
+	ECLIPSE
 
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png) &nbsp;
 
@@ -60,7 +61,8 @@ Neste guia, sempre que necessário editar algum arquivo, será usado o editor de
 ## 4.1 - Instalando e configurando o Servidor WEB Apache2
 
 Para instalar o Apache2, execute o seguinte comando:
-<br>`sudo apt-get install apache2`</br>
+
+	sudo apt-get install apache2
 
 Agora é necessário alterar o arquivo /etc/apache2/apache2.conf. Usando o gedit, é possível editar as informações desse arquivo executando o comando:
 <br>`sudo gedit /etc/apache2/apache2.conf`</br>
