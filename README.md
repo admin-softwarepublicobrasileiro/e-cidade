@@ -395,28 +395,23 @@ Confira o arquivo de configuração da base de dados:
 
 As variáveis devem estar da seguinte maneira:
 
-`$DB_USUARIO = “dbportal”;`
-
-`$DB_SENHA = “”; // Ou alguma senha, se foi definida para o usuário dbportal no postgresql` 
-
-`$DB_SERVIDOR = “localhost”;`
-
-`$DB_PORTA = “5432”;`
-
-`$DB_PORTA_ALT = “5432”;` 
-
-`$DB_BASE = “e-cidade”;`
+	$DB_USUARIO = “dbportal”;
+	$DB_SENHA = “”; // Ou alguma senha, se foi definida para o usuário dbportal no postgresql
+	$DB_SERVIDOR = “localhost”;
+	$DB_PORTA = “5432”;
+	$DB_PORTA_ALT = “5432”;
+	$DB_BASE = “e-cidade”;
 
 ## 4.7 - Acesso ao e-cidade
 
 Se você optou por instalar o ambiente gráfico, então basta abrir o navegador Firefox e acessar o seguinte endereço:
 
-`http://localhost/e-cidade`
+	http://localhost/e-cidade
 
-Caso você tenha instalado o servidor sem ambiente gráfico, então apartir de um computador desktop abra o navegador Firefox e acesse o seguinte endereço:
+Caso você tenha instalado o servidor sem ambiente gráfico, então a partir de um computador desktop abra o navegador Firefox e acesse o seguinte endereço:
 
-`http://<ip_do_servidor>/e-cidade`
-
+	http://<ip_do_servidor>/e-cidade
+	
 `Onde “ip_do_servidor” indica o entereço IP atribuído na instalação do servidor Ubuntu.`
 
 Na tela de login do e-cidade informar o usuário “dbseller” e deixar a senha em branco.
@@ -429,34 +424,34 @@ O e-cidade é compatível com a versão 3.0 ou inferior do Mozilla Firefox.
 
 Para tornar o e-cidade compatível com as demais versões do Firefox é necessário editar o seguinte arquivo:
 
-`sudo gedit  /var/www/e-cidade/config/require_extensions.xml`
+	sudo gedit  /var/www/e-cidade/config/require_extensions.xml
 
 Onde está assim:
 
-<browsers>
-    <browser name='firefox' versao='1.5.*'></browser>
-    <browser name='firefox' versao='2.0.*'></browser>
-    <browser name='firefox' versao='3.0.*'></browser>
-    <browser name='firefox' versao='3.1.*'></browser>
-</browsers>
+	<browsers>
+	 <browser name='firefox' versao='1.5.*'></browser>
+	 <browser name='firefox' versao='2.0.*'></browser>
+	 <browser name='firefox' versao='3.0.*'></browser>
+	 <browser name='firefox' versao='3.1.*'></browser>
+	</browsers>
 
 Deverá ficar da seguinte maneira:
 
-<browsers>
-    <browser name='firefox' versao='1.5.*'></browser>
-    <browser name='firefox' versao='2.0.*'></browser>
-    <browser name='firefox' versao='3.0.*'></browser>
-    <browser name='firefox' versao='3.1.*'></browser>
-    <browser name='firefox' versao='3.5.*'></browser>
-    <browser name='firefox' versao='3.6.*'></browser>
-    <browser name='msie' versao='6.0.*'></browser>
-    <browser name='msie' versao='7.0.*'></browser>
-    <browser name='msie' versao='8.0.*'></browser>
-</browsers>
+	<browsers>
+	    <browser name='firefox' versao='1.5.*'></browser>
+       	    <browser name='firefox' versao='2.0.*'></browser>
+	    <browser name='firefox' versao='3.0.*'></browser>
+	    <browser name='firefox' versao='3.1.*'></browser>
+	    <browser name='firefox' versao='3.5.*'></browser>
+	    <browser name='firefox' versao='3.6.*'></browser>
+	    <browser name='msie' versao='6.0.*'></browser>
+    	    <browser name='msie' versao='7.0.*'></browser>
+    	    <browser name='msie' versao='8.0.*'></browser>
+	</browsers>
 
 Reinicie o Apache:
 
-`sudo /etc/init.d/apache2 restart`
+	sudo /etc/init.d/apache2 restart
 
 ## 4.8 - Disponibilização do “e-cidade online”
 
@@ -464,39 +459,34 @@ O pacote e-cidadeonline é o serviço disponível ao cidadão.
 
 Acesse o pacote onde estão os arquivos do e-cidade:
 
-`cd /tmp/e-cidade-2.2.28-linux.completo`
+	cd /tmp/e-cidade-2.2.28-linux.completo
 	
 Copie os arquivos do e-cidade online para a pasta do Apache2:
 
-`sudo cp -r e-cidadeonline /var/www`
+	sudo cp -r e-cidadeonline /var/www
 	
 Ajuste as permissões da pasta:
 
-`sudo chown -R usuario1.www-data /var/www/e-cidadeonline`
-
-`sudo chmod -R 775 /var/www/e-cidadeonline`
-
-`sudo chmod -R 777 /var/www/e-cidadeonline/tmp`
+	sudo chown -R usuario1.www-data /var/www/e-cidadeonline`
+	sudo chmod -R 775 /var/www/e-cidadeonline
+	sudo chmod -R 777 /var/www/e-cidadeonline/tmp
 
 Confira o arquivo de configuração da base de dados:
 
-`sudo gedit /var/www/e-cidadeonline/libs/db_conn.php`
+	sudo gedit /var/www/e-cidadeonline/libs/db_conn.php
 	
 As variáveis devem estar da seguinte maneira:
 
-`$DB_INSTITUICAO = 1;`
+	$DB_INSTITUICAO = 1;
+	$DB_SENHA='; // Ou se for definida alguma senha para o usuario dbportal no postgresql
+	$DB_SERVIDOR = 'localhost';
+	$DB_PORTA= '5432';
+	$DB_BASEDADOS = 'e-cidade';
 
-`$DB_SENHA='; // Ou se for definida alguma senha para o usuario dbportal no postgresql`
+Para acessar o e-cidade online, entre no seguinte endereço:
 
-`$DB_SERVIDOR = 'localhost';`
-
-`$DB_PORTA= '5432';`
-
-`$DB_BASEDADOS = 'e-cidade';`
-
-Para acessar o e-cidade online, entre no seguinte endereço	:
-
-`http://<ip_do_servidor>/e-cidadeonline`
+	http://<ip_do_servidor>/e-cidadeonline
 
 ## 5 - Link da Licença Júridica Creative Commons
-http://creativecommons.org/licenses/by-sa/2.0/br/legalcode
+
+	http://creativecommons.org/licenses/by-sa/2.0/br/legalcode
