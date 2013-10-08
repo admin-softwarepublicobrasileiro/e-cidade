@@ -61,7 +61,7 @@ Neste guia, sempre que necessário editar algum arquivo, será usado o editor de
 
 ## 4.1 - Instalando e configurando o Servidor WEB Apache2
 
-Para instalar o Apache2, execute o seguinte comando:
+Para instalar o <b>Apache2</b>, execute o seguinte comando:
 
 	sudo apt-get install apache2
 
@@ -69,7 +69,7 @@ Agora é necessário alterar o arquivo <i>/etc/apache2/apache2.conf</i>. Usando 
 
 	sudo gedit /etc/apache2/apache2.conf
 
-Altere o valor do parâmetro Timeout:
+Altere o valor do parâmetro <b>Timeout</b>:
 
 	Timeout 12000
 	
@@ -84,13 +84,13 @@ Agora, altere o arquivo <i>/etc/apache2/conf.d/charset</i>. Usando o gedit faça
 
 	sudo gedit /etc/apache2/conf.d/charset
 	
-Altere o valor do parâmetro AddDefaultCharset:
+Altere o valor do parâmetro <b>AddDefaultCharset</b>:
 
 	AddDefaultCharset ISO-8859-1
 
 Caso a linha desse parâmetro esteja comentada, ou seja, iniciando com o caractere '#', remova este.
 
-Deverá ser criada uma pasta de arquivos temporários. Crie a pasta <b>“tmp”</b> no DOCUMENT_ROOT do Apache (<i>/var/www</i>), da seguinte maneira:
+Deverá ser criada uma pasta de arquivos temporários. Crie a pasta <b>“tmp”</b> no <b>DOCUMENT_ROOT</b> do Apache (<i>/var/www</i>), da seguinte maneira:
 
 	sudo mkdir /var/www/tmp
 	sudo chown -R www-data.www-data /var/www/tmp
@@ -110,7 +110,7 @@ Execute o seguinte comando para instalar os pacotes necessários:
 
 	sudo apt-get install php5 php5-gd php5-pgsql php5-cli php5-mhash php5-mcrypt
 
-Crie a pasta para os logs do PHP5:
+Crie a pasta para os logs do <b>PHP5</b>:
 
 	sudo mkdir /var/www/log
 	sudo chown -R www-data.www-data /var/www/log
@@ -142,7 +142,7 @@ Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o car
 
 ## 4.3 - Instalando o PostgreSQL 8.2
 
-Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o PostgreSQL versão 8.2.
+Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o <b>PostgreSQL versão 8.2</b>.
 Para conseguir baixar essa versão, edite o arquivo <i>/etc/apt/sources.list</i>:
 
 	sudo gedit /etc/apt/sources.list
@@ -151,24 +151,24 @@ Acrescente a seguinte linha ao final do arquivo:
 
 	deb http://br.archive.ubuntu.com/ubuntu hardy main universe
   
-Agora, para instalar o PostgreSQL 8.2 deve-se executar os seguintes comandos:
+Agora, para instalar o <b>PostgreSQL 8.2</b> deve-se executar os seguintes comandos:
 
 	sudo apt-get update
 	sudo apt-get install postgresql-8.2
   
 **Configurando o Cluster.**
 
-Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do PostgreSQL 8.2 onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
+Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do <b>PostgreSQL 8.2</b> onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
-Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
+Altere as linhas no final do arquivo que estão sem o caractere '#', colocando <b>“trust”</b> no lugar da última coluna. Assim:
 
 	local all all                trust
 	host all all 127.0.0.1/32    trust
 	host all all ::1/128         trust
 		
-Recarregue as configurações do PostgreSQL:
+Recarregue as configurações do <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 reload
 	
@@ -186,7 +186,7 @@ Remova o cluster atual:
 
 	sudo pg_dropcluster -stop 8.2 main
 			
-Crie o novo cluster como LATIN1:
+Crie o novo cluster como <b>LATIN1</b>:
 
 	sudo pg_createcluster -e LATIN1 8.2 main
 	
@@ -198,13 +198,13 @@ Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
-Altere as linhas no final do arquivo que estão sem o caractere '#', colocando “trust” no lugar da última coluna. Assim:
+Altere as linhas no final do arquivo que estão sem o caractere '#', colocando <b>“trust”</b> no lugar da última coluna. Assim:
 
 	local all all                trust
 	host all all 127.0.0.1/32    trust
 	host all all ::1/128         trust
 	
-Recarregue as configurações do PostgreSQL:
+Recarregue as configurações do <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 reload
 
@@ -238,7 +238,7 @@ Reconfigure o locales:
 	export LANG=pt_BR.ISO-8859-1
 	sudo pg_createcluster -e LATIN1 8.2 main
 
-Inicie o servidor PostgreSQL:
+Inicie o servidor <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 start
 
@@ -246,13 +246,13 @@ Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
-Altere as linhas ao final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
+Altere as linhas ao final do arquivo que estão sem o caractere “#”, colocando <b>“trust”</b> no lugar da última coluna:
 
 	local all all                trust
 	host all all 127.0.0.1/32    trust
 	host all all ::1/128         trust
 	
-Recarregue as configurações do PostgreSQL:
+Recarregue as configurações do <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 reload
 
@@ -265,7 +265,8 @@ O resultado deve ser o seguinte:
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/8.png) &nbsp;
 
 **Configurando o PostgreSQL 8.2**
-É necessário modificar o arquivo postgresql.conf:
+
+É necessário modificar o arquivo <i>postgresql.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/postgresql.conf
 
@@ -298,7 +299,7 @@ Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
-Alterar as linhas no final do arquivo que estão sem o caractere “#”, colocando “trust” no lugar da última coluna:
+Alterar as linhas no final do arquivo que estão sem o caractere “#”, colocando <b>“trust”</b> no lugar da última coluna:
 
 	local all all                trust
 	host all all 127.0.0.1/32    trust
@@ -334,7 +335,7 @@ Altere o arquivo <i>/etc/rc.local/</i>:
 	
 	sudo gedit /etc/rc.local
 
-Adicione o seguinte texto antes da linha que contém “exit 0”:
+Adicione o seguinte texto antes da linha que contém <i>“exit 0”</i>:
 	
 	/usr/bin/soffice -accept="socket,host=localhost,port=8100;urp;" - nofirststartwizard -headless & exit 0
 
@@ -373,7 +374,7 @@ Para importar os comandos. SQL de criação da estrutura de dados, execute:
 
 ## 4.6 Disponibilização do e-cidade
 
-Acesse o pacote e copie os arquivos do e-cidade para a pasta do Apache2:
+Acesse o pacote e copie os arquivos do e-cidade para a pasta do <b>Apache2</b>:
 
 	cd /tmp/e-cidade-2.2.28-linux.completo
 
@@ -412,9 +413,9 @@ Caso você tenha instalado o servidor sem ambiente gráfico, então a partir de 
 
 	http://<ip_do_servidor>/e-cidade
 	
-    * Onde “ip_do_servidor” indica o entereço IP atribuído na instalação do servidor Ubuntu.`
+    * Onde <b>“ip_do_servidor”</b> indica o entereço IP atribuído na instalação do servidor Ubuntu.
 
-Na tela de login do e-cidade informar o usuário “dbseller” e deixar a senha em branco.
+Na tela de login do e-cidade informar o usuário <b>“dbseller”</b> e deixar a senha em branco.
 
 `**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas <i>“pop-up”</i> desbloqueadas para o IP do Servidor.**`
 
@@ -461,7 +462,7 @@ Acesse o pacote onde estão os arquivos do e-cidade:
 
 	cd /tmp/e-cidade-2.2.28-linux.completo
 	
-Copie os arquivos do e-cidade online para a pasta do Apache2:
+Copie os arquivos do e-cidade online para a pasta do <b>Apache2</b>:
 
 	sudo cp -r e-cidadeonline /var/www
 	
