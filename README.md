@@ -4,24 +4,24 @@ Para a utilização deste documento é necessário seguir as regras da licença 
 
 Você tem a liberdade de:
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png) &nbsp; <b>Compartilhar</b> — copiar, distribuir e transmitir a obra.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/1.png) &nbsp; <b>Compartilhar — </b> copiar, distribuir e transmitir a obra.
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png) &nbsp; <b>Remixar</b> — criar obras derivadas.
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/2.png) &nbsp; <b>Remixar — </b> criar obras derivadas.
 
 Sob as seguintes condições:
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp; <b>Atribuição</b> — Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/3.png) &nbsp; <b>Atribuição — </b> Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra). 
 
-![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp; <b>Compartilhamento pela mesma licença</b> — Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
+![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/4.png) &nbsp; <b>Compartilhamento pela mesma licença — </b> Se você alterar, transformar ou criar em cima desta obra, você poderá distribuir a obra resultante apenas sob a mesma licença, ou sob uma licença similar à presente. 
 
 Ficando claro que:
-Renúncia — Qualquer das condições acima pode ser [renunciada](http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#) se você obtiver permissão do titular dos direitos autorais. 
-Domínio Público — Onde a obra ou qualquer de seus elementos estiver em [domínio público](http://wiki.creativecommons.org/Public_domain) sob o direito aplicável, esta condição não é, de maneira alguma, afetada pela licença. 
-Outros Direitos — Os seguintes direitos não são, de maneira alguma, afetados pela licença: 
+<b>Renúncia —</b> Qualquer das condições acima pode ser [renunciada](http://creativecommons.org/licenses/by-nc-sa/2.5/br/deed.pt_BR#) se você obtiver permissão do titular dos direitos autorais. 
+<b>Domínio Público —</b> Onde a obra ou qualquer de seus elementos estiver em [domínio público](http://wiki.creativecommons.org/Public_domain) sob o direito aplicável, esta condição não é, de maneira alguma, afetada pela licença. 
+<b>Outros Direitos —</b> Os seguintes direitos não são, de maneira alguma, afetados pela licença: 
 Limitações e exceções aos direitos autorais ou quaisquer [usos livres](http://wiki.creativecommons.org/Frequently_Asked_Questions#Do_Creative_Commons_licenses_affect_fair_use.2C_fair_dealing_or_other_exceptions_to_copyright.3F) aplicáveis; 
 Os [direitos morais](http://wiki.creativecommons.org/Frequently_Asked_Questions#I_don.E2.80.99t_like_the_way_a_person_has_used_my_work_in_a_derivative_work_or_included_it_in_a_collective_work.3B_what_can_I_do.3F) do autor; 
 Direitos que outras pessoas podem ter sobre a obra ou sobre a utilização da obra, tais como [direitos de imagem](http://wiki.creativecommons.org/Frequently_Asked_Questions#When_are_publicity_rights_relevant.3F) ou privacidade. 
-Aviso — Para qualquer reutilização ou distribuição, você deve deixar claro a terceiros os termos da licença a que se encontra submetida esta obra. A melhor maneira de fazer isso é com um link para esta página. 
+<b>Aviso —</b> Para qualquer reutilização ou distribuição, você deve deixar claro a terceiros os termos da licença a que se encontra submetida esta obra. A melhor maneira de fazer isso é com um link para esta página. 
 
 
 ## 2 - Introdução ao Sistema e-cidade
@@ -30,7 +30,8 @@ O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de fo
 A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. 
 
 ## 2.1 - Características 
-O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: www.softwarepublico.gov.br. 
+
+O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: [www.softwarepublico.gov.br](http://www.softwarepublico.gov.br). 
 O sistema possui a seguinte plataforma tecnológica:
 
 LINUX
@@ -64,7 +65,7 @@ Para instalar o Apache2, execute o seguinte comando:
 
 	sudo apt-get install apache2
 
-Agora é necessário alterar o arquivo /etc/apache2/apache2.conf. Usando o gedit, é possível editar as informações desse arquivo executando o comando:
+Agora é necessário alterar o arquivo <i>/etc/apache2/apache2.conf</i>. Usando o gedit, é possível editar as informações desse arquivo executando o comando:
 
 	sudo gedit /etc/apache2/apache2.conf
 
@@ -74,12 +75,12 @@ Altere o valor do parâmetro Timeout:
 	
 Além disso, adicione as seguintes linhas ao final desse arquivo:
 
-# linhas adicionadas para o e-cidade
+ *Linhas adicionadas para o e-cidade
 
 	LimitRequestLine 16382
 	LimitRequestFieldSize 16382
 
-Agora, altere o arquivo /etc/apache2/conf.d/charset. Usando o gedit faça assim:
+Agora, altere o arquivo <i>/etc/apache2/conf.d/charset</i>. Usando o gedit faça assim:
 
 	sudo gedit /etc/apache2/conf.d/charset
 	
@@ -89,17 +90,17 @@ Altere o valor do parâmetro AddDefaultCharset:
 
 Caso a linha desse parâmetro esteja comentada, ou seja, iniciando com o caractere '#', remova este.
 
-Deverá ser criada uma pasta de arquivos temporários. Crie a pasta “tmp” no DOCUMENT_ROOT do Apache (/var/www), da seguinte maneira:
+Deverá ser criada uma pasta de arquivos temporários. Crie a pasta <b>“tmp”</b> no DOCUMENT_ROOT do Apache (<i>/var/www</i>), da seguinte maneira:
 
 	sudo mkdir /var/www/tmp
 	sudo chown -R www-data.www-data /var/www/tmp
 	sudo chmod -R 777 /var/www/tmp
 
-Adicione o usuário que irá administrar o e-cidade no grupo “www-data”. Esse usuário varia de acordo com sua instalação. No caso desse manual foi criado um usuário chamado “usuario1”. Deve-se editar o seguinte arquivo:
+Adicione o usuário que irá administrar o e-cidade no grupo <b>“www-data”</b>. Esse usuário varia de acordo com sua instalação. No caso desse manual foi criado um usuário chamado <b>“usuario1”</b>. Deve-se editar o seguinte arquivo:
 
 	sudo gedit /etc/group
 
-Adicione a seguinte linha (onde “usuario1” deve ser trocado pelo seu usuário criado na instalação do Ubuntu):
+Adicione a seguinte linha (onde <b>“usuario1”</b> deve ser trocado pelo seu usuário criado na instalação do Ubuntu):
 	
 	www-data:x:33:usuario1
 
@@ -114,7 +115,7 @@ Crie a pasta para os logs do PHP5:
 	sudo mkdir /var/www/log
 	sudo chown -R www-data.www-data /var/www/log
 
-Agora é necessário editar o arquivo /etc/php5/apache2/php.ini:
+Agora é necessário editar o arquivo <i>/etc/php5/apache2/php.ini</i>:
 
 	sudo gedit /etc/php5/apache2/php.ini	
 
@@ -142,7 +143,7 @@ Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o car
 ## 4.3 - Instalando o PostgreSQL 8.2
 
 Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o PostgreSQL versão 8.2.
-Para conseguir baixar essa versão, edite o arquivo /etc/apt/sources.list:
+Para conseguir baixar essa versão, edite o arquivo <i>/etc/apt/sources.list</i>:
 
 	sudo gedit /etc/apt/sources.list
 
@@ -157,7 +158,7 @@ Agora, para instalar o PostgreSQL 8.2 deve-se executar os seguintes comandos:
   
 **Configurando o Cluster.**
 
-Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do PostgreSQL 8.2 onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do PostgreSQL 8.2 onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
@@ -193,7 +194,7 @@ Inicie o PostgreSQL:
 
 	sudo /etc/init.d/postgresql-8.2 start
 		
-Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
@@ -215,7 +216,7 @@ Novamente, verifique o encoding do cluster:
 
 ***ATENÇÃO! Se o resultado do seu comando foi a tabela mostrada acima, pule os próximos passos, indo direto para a parte “Configurando o PostgreSQL 8.2”. Caso o resultado do comando seja algo diferente da tabela acima, então o sistema operacional instalado está sem suporte ao encoding LATIN1. Assim, será necessário realizar os passos abaixo:***
 
-Edite o arquivo /var/lib/locales/support.d/local
+Edite o arquivo <i>/var/lib/locales/support.d/local</i>:
 
 	sudo gedit /var/lib/locales/support.d/local
 
@@ -223,7 +224,7 @@ Adicione:
 
 	pt_BR.ISO-8859-1 ISO-8859-1
 
-Edite o arquivo /etc/locale.alias:
+Edite o arquivo <i>/etc/locale.alias</i>:
 
 	sudo gedit /etc/locale.alias
 
@@ -241,7 +242,7 @@ Inicie o servidor PostgreSQL:
 
 	sudo /etc/init.d/postgresql-8.2 start
 
-Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
@@ -293,7 +294,7 @@ Reinicie o PostgreSQL:
 
 	sudo /etc/init.d/postgresql-8.2 restart
 	
-Edite o arquivo /etc/postgresql/8.2/main/pg_hba.conf:
+Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
@@ -309,12 +310,11 @@ Recarregue as configurações do PostgreSQL:
 
 ## 4.4 - Instalação do OpenOffice
 
-Altere o arquivo sources.list:
+Altere o arquivo <i>sources.list</i>:
 
 	sudo gedit /etc/apt/sources.list
 
-Remova a seguinte linha que adicionamos no passo de instalação do 
-PostgreSQL:
+Remova a seguinte linha que adicionamos no passo de instalação do PostgreSQL:
 	
 	deb http://br.archive.ubuntu.com/ubuntu hardy main universe
 
@@ -330,7 +330,7 @@ Para instalar o OpenOffice basta executar:
 	
 	sudo apt-get install openoffice.org-headless openoffice.org-java-common sun-java6-jre
 
-Altere o arquivo /etc/rc.local/:
+Altere o arquivo <i>/etc/rc.local/</i>:
 	
 	sudo gedit /etc/rc.local
 
@@ -340,8 +340,8 @@ Adicione o seguinte texto antes da linha que contém “exit 0”:
 
 ## 4.5 - Configuração do e-cidade
 
-Nesse manual será instalada a versão 2.2.28 da solução, cujo pacote "e-cidade-2.2.28-linux.completo.tar.bz2" deverá ser baixado através do Portal do Software Público, comunidade e-cidade (use o pacote que está na pasta “Pacotes disponíveis” - em Armazenagem de Arquivos). Baixe o pacote e coloque na pasta /tmp.
-Feito isso, acesse a pasta /tmp:
+Nesse manual será instalada a versão 2.2.28 da solução, cujo pacote <b>"e-cidade-2.2.28-linux.completo.tar.bz2"</b> deverá ser baixado através do Portal do Software Público, comunidade e-cidade (use o pacote que está na pasta “Pacotes disponíveis” - em Armazenagem de Arquivos). Baixe o pacote e coloque na pasta <i>/tmp</i>.
+Feito isso, acesse a pasta <i>/tmp</i>:
 
 	cd /tmp
 	
@@ -379,7 +379,7 @@ Acesse o pacote e copie os arquivos do e-cidade para a pasta do Apache2:
 
 	sudo cp -r e-cidade /var/www
 
-Ajuste as permissões da pasta /var/www/e-cidade:
+Ajuste as permissões da pasta <i>/var/www/e-cidade</i>:
 
 	sudo chown -R usuario1.www-data /var/www/e-cidade
 
@@ -387,7 +387,7 @@ Ajuste as permissões da pasta /var/www/e-cidade:
 
 	sudo chmod -R 777 /var/www/e-cidade/tmp
 
-Lembre-se que “usuario1” varia de acordo com sua instalação e usuário utilizado.
+Lembre-se que <i>“usuario1”</i> varia de acordo com sua instalação e usuário utilizado.
 
 Confira o arquivo de configuração da base de dados:
 
@@ -412,11 +412,11 @@ Caso você tenha instalado o servidor sem ambiente gráfico, então a partir de 
 
 	http://<ip_do_servidor>/e-cidade
 	
-`Onde “ip_do_servidor” indica o entereço IP atribuído na instalação do servidor Ubuntu.`
+    * Onde “ip_do_servidor” indica o entereço IP atribuído na instalação do servidor Ubuntu.`
 
 Na tela de login do e-cidade informar o usuário “dbseller” e deixar a senha em branco.
 
-`**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas “pop-up” desbloqueadas para o IP do Servidor.**`
+`**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas <i>“pop-up”</i> desbloqueadas para o IP do Servidor.**`
 
 Compatibilidade das versões do Firefox:
 
@@ -489,4 +489,4 @@ Para acessar o e-cidade online, entre no seguinte endereço:
 
 ## 5 - Link da Licença Júridica Creative Commons
 
-	http://creativecommons.org/licenses/by-sa/2.0/br/legalcode
+[http://creativecommons.org/licenses/by-sa/2.0/br/legalcode](http://creativecommons.org/licenses/by-sa/2.0/br/legalcode)
