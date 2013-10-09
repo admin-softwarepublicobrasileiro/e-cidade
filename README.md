@@ -198,7 +198,7 @@ Crie o novo cluster como <b>LATIN1</b>:
 
 	sudo pg_createcluster -e LATIN1 8.2 main
 	
-Inicie o PostgreSQL:
+Inicie o <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 start
 		
@@ -313,7 +313,7 @@ Alterar as linhas no final do arquivo que estão sem o caractere “#”, coloca
 	host all all 127.0.0.1/32    trust
 	host all all ::1/128         trust
 		
-Recarregue as configurações do PostgreSQL:
+Recarregue as configurações do <b>PostgreSQL</b>:
 
 	sudo /etc/init.d/postgresql-8.2 reload
 
@@ -323,7 +323,7 @@ Altere o arquivo <i>sources.list</i>:
 
 	sudo gedit /etc/apt/sources.list
 
-Remova a seguinte linha que adicionamos no passo de instalação do PostgreSQL:
+Remova a seguinte linha que adicionamos no passo de instalação do <b>PostgreSQL</b>:
 	
 	deb http://br.archive.ubuntu.com/ubuntu hardy main universe
 
@@ -364,11 +364,11 @@ Acesse a seguinte pasta:
 
 	cd e-cidade-2.2.28-linux.completo/sql/	
 
-Crie o usuário dbportal do postgres:
+Crie o usuário <b>dbportal</b> do postgres:
 
 	psql -U postgres -hlocalhost template1 -c "create role dbportal with superuser login password 'dbportal'"
 
-Crie o usuário dbseller do postgres: 
+Crie o usuário <b>dbseller</b> do postgres: 
 
 	psql -U postgres -h localhost template1 -c "create role dbseller with login password 'dbseller'"
 
@@ -385,15 +385,12 @@ Para importar os comandos. SQL de criação da estrutura de dados, execute:
 Acesse o pacote e copie os arquivos do e-cidade para a pasta do <b>Apache2</b>:
 
 	cd /tmp/e-cidade-2.2.28-linux.completo
-
 	sudo cp -r e-cidade /var/www
 
 Ajuste as permissões da pasta <i>/var/www/e-cidade</i>:
 
 	sudo chown -R usuario1.www-data /var/www/e-cidade
-
 	sudo chmod -R 775 /var/www/e-cidade
-
 	sudo chmod -R 777 /var/www/e-cidade/tmp
 
 Lembre-se que <i>“usuario1”</i> varia de acordo com sua instalação e usuário utilizado.
