@@ -476,7 +476,7 @@ Copie os arquivos do e-cidade online para a pasta do <b>Apache2</b>:
 	
 Ajuste as permissões da pasta:
 
-	sudo chown -R usuario1.www-data /var/www/e-cidadeonline`
+	sudo chown -R usuario1.www-data /var/www/e-cidadeonline
 	sudo chmod -R 775 /var/www/e-cidadeonline
 	sudo chmod -R 777 /var/www/e-cidadeonline/tmp
 
