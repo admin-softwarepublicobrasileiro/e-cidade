@@ -35,15 +35,15 @@ A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há
 O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: [www.softwarepublico.gov.br](http://www.softwarepublico.gov.br). 
 O sistema possui a seguinte plataforma tecnológica:
 
-LINUX
-APACHE – PHP
-POSTGRESQL – PSQL
-FPDF
-AGATA – API
-FIREFOX
-HTML / CSS / JAVASCRIPT
-JAVA TOMCAT
-ECLIPSE
+LINUX<br>
+APACHE – PHP<br>
+POSTGRESQL – PSQL<br>
+FPDF<br>
+AGATA – API<br>
+FIREFOX<br>
+HTML / CSS / JAVASCRIPT<br>
+JAVA TOMCAT<br>
+ECLIPSE<br>
 
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png) &nbsp;
 
