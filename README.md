@@ -444,15 +444,15 @@ Onde está assim:
 Deverá ficar da seguinte maneira:
 
 	<browsers>
-	   <browser name='firefox' versao='1.5.*'></browser>
-       	   <browser name='firefox' versao='2.0.*'></browser>
-	   <browser name='firefox' versao='3.0.*'></browser>
-	   <browser name='firefox' versao='3.1.*'></browser>
-	   <browser name='firefox' versao='3.5.*'></browser>
-	   <browser name='firefox' versao='3.6.*'></browser>
-	   <browser name='msie' versao='6.0.*'></browser>
-    	   <browser name='msie' versao='7.0.*'></browser>
-    	   <browser name='msie' versao='8.0.*'></browser>
+	  <browser name='firefox' versao='1.5.*'></browser>
+	  <browser name='firefox' versao='2.0.*'></browser>
+	  <browser name='firefox' versao='3.0.*'></browser>
+	  <browser name='firefox' versao='3.1.*'></browser>
+	  <browser name='firefox' versao='3.5.*'></browser>
+	  <browser name='firefox' versao='3.6.*'></browser>
+	  <browser name='msie' versao='6.0.*'></browser>
+	  <browser name='msie' versao='7.0.*'></browser>
+	  <browser name='msie' versao='8.0.*'></browser>
 	</browsers>
 
 Reinicie o Apache:
