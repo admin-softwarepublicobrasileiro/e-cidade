@@ -443,7 +443,7 @@ Onde está assim:
 
 Deverá ficar da seguinte maneira:
 
-        <browsers>
+	<browsers>
 	   <browser name='firefox' versao='1.5.*'></browser>
        	   <browser name='firefox' versao='2.0.*'></browser>
 	   <browser name='firefox' versao='3.0.*'></browser>
