@@ -68,8 +68,9 @@ Direitos que outras pessoas podem ter sobre a obra ou sobre a utilização da ob
 <h2>
 <a name="2---introdu%C3%A7%C3%A3o-ao-sistema-e-cidade" class="anchor" href="#2---introdu%C3%A7%C3%A3o-ao-sistema-e-cidade"><span class="octicon octicon-link"></span></a>2 - Introdução ao Sistema e-cidade</h2>
 
-<p>O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
-A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. </p>
+<p>O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.</p>
+
+<p>A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. </p>
 
 <h2>
 <a name="21---caracter%C3%ADsticas" class="anchor" href="#21---caracter%C3%ADsticas"><span class="octicon octicon-link"></span></a>2.1 - Características</h2>
@@ -77,17 +78,15 @@ A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há
 <p>O código fonte está disponível para ser baixado livremente no Portal do Software Público Brasileiro: <a href="http://www.softwarepublico.gov.br">www.softwarepublico.gov.br</a>. 
 O sistema possui a seguinte plataforma tecnológica:</p>
 
-<p>LINUX</p>
-
-<pre><code>APACHE – PHP
-POSTGRESQL – PSQL
-FPDF
-AGATA – API
-FIREFOX
-HTML / CSS / JAVASCRIPT
-JAVA TOMCAT
-ECLIPSE
-</code></pre>
+<p>LINUX<br>
+APACHE – PHP<br>
+POSTGRESQL – PSQL<br>
+FPDF<br>
+AGATA – API<br>
+FIREFOX<br>
+HTML / CSS / JAVASCRIPT<br>
+JAVA TOMCAT<br>
+ECLIPSE<br></p>
 
 <p><img src="https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png" alt="">  </p>
 
@@ -97,10 +96,13 @@ ECLIPSE
 <h2>
 <a name="31---informa%C3%A7%C3%B5es-gerais-para-instala%C3%A7%C3%A3o" class="anchor" href="#31---informa%C3%A7%C3%B5es-gerais-para-instala%C3%A7%C3%A3o"><span class="octicon octicon-link"></span></a>3.1 - Informações gerais para instalação</h2>
 
-<p>É recomendado que este guia seja executado por um usuário com experiência em instalação de pacotes no Linux e configuração básica de Apache, PHP e PostgreSQL. 
-Este roteiro está baseado no Sistema Operacional GNU/Linux Ubuntu 10.04 LTS. Cabe lembrar que em outras distribuições Linux o processo de instalação pode variar.
-Este manual pressupõe que o servidor de aplicação Web e o banco de dados estarão instalados no mesmo servidor. 
-Neste guia, sempre que necessário editar algum arquivo, será usado o editor de texto GEDIT. Mas cabe lembrar que é apenas uma opção, existem outros editores como o VIM.</p>
+<p>É recomendado que este guia seja executado por um usuário com experiência em instalação de pacotes no Linux e configuração básica de Apache, PHP e PostgreSQL. </p>
+
+<p>Este roteiro está baseado no Sistema Operacional GNU/Linux Ubuntu 10.04 LTS. Cabe lembrar que em outras distribuições Linux o processo de instalação pode variar.</p>
+
+<p>Este manual pressupõe que o servidor de aplicação Web e o banco de dados estarão instalados no mesmo servidor. </p>
+
+<p>Neste guia, sempre que necessário editar algum arquivo, será usado o editor de texto GEDIT. Mas cabe lembrar que é apenas uma opção, existem outros editores como o VIM.</p>
 
 <h2>
 <a name="4---passo-a-passo-da-instala%C3%A7%C3%A3o" class="anchor" href="#4---passo-a-passo-da-instala%C3%A7%C3%A3o"><span class="octicon octicon-link"></span></a>4 - Passo-a-passo da Instalação</h2>
@@ -125,13 +127,15 @@ Neste guia, sempre que necessário editar algum arquivo, será usado o editor de
 
 <p>Além disso, adicione as seguintes linhas ao final desse arquivo:</p>
 
-<p>*Linhas adicionadas para o e-cidade</p>
+<ul>
+<li>
+<p>Linhas adicionadas para o e-cidade</p>
 
 <pre><code>LimitRequestLine 16382
 LimitRequestFieldSize 16382
 </code></pre>
-
-<p>Agora, altere o arquivo <i>/etc/apache2/conf.d/charset</i>. Usando o gedit faça assim:</p>
+</li>
+</ul><p>Agora, altere o arquivo <i>/etc/apache2/conf.d/charset</i>. Usando o gedit faça assim:</p>
 
 <pre><code>sudo gedit /etc/apache2/conf.d/charset
 </code></pre>
@@ -195,7 +199,7 @@ allow_call_time_pass_reference = On
 error_reporting = E_ALL &amp; ~E_NOTICE
 display_errors = Off
 log_errors = On
-error_log = /var/www/log/php-scripts.log(retirar o ponto e vírgula da frente da linha)
+error_log = /var/www/log/php-scripts.log       (retirar o ponto e vírgula da frente da linha)
 session.gc_maxlifetime = 7200
 </code></pre>
 
@@ -204,8 +208,9 @@ session.gc_maxlifetime = 7200
 <h2>
 <a name="43---instalando-o-postgresql-82" class="anchor" href="#43---instalando-o-postgresql-82"><span class="octicon octicon-link"></span></a>4.3 - Instalando o PostgreSQL 8.2</h2>
 
-<p>Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o <b>PostgreSQL versão 8.2</b>.
-Para conseguir baixar essa versão, edite o arquivo <i>/etc/apt/sources.list</i>:</p>
+<p>Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o <b>PostgreSQL versão 8.2</b>.</p>
+
+<p>Para conseguir baixar essa versão, edite o arquivo <i>/etc/apt/sources.list</i>:</p>
 
 <pre><code>sudo gedit /etc/apt/sources.list
 </code></pre>
@@ -223,7 +228,11 @@ sudo apt-get install postgresql-8.2
 
 <p><strong>Configurando o Cluster.</strong></p>
 
-<p>Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do <b>PostgreSQL 8.2</b> onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:</p>
+<p>Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB).</p>
+
+<p>Nessa instalação será usado o cluster do <b>PostgreSQL 8.2</b> onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1).</p>
+
+<p>Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:</p>
 
 <pre><code>sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 </code></pre>
@@ -261,7 +270,7 @@ host all all ::1/128         trust
 <pre><code>sudo pg_createcluster -e LATIN1 8.2 main
 </code></pre>
 
-<p>Inicie o PostgreSQL:</p>
+<p>Inicie o <b>PostgreSQL</b>:</p>
 
 <pre><code>sudo /etc/init.d/postgresql-8.2 start
 </code></pre>
@@ -396,7 +405,7 @@ host all all 127.0.0.1/32    trust
 host all all ::1/128         trust
 </code></pre>
 
-<p>Recarregue as configurações do PostgreSQL:</p>
+<p>Recarregue as configurações do <b>PostgreSQL</b>:</p>
 
 <pre><code>sudo /etc/init.d/postgresql-8.2 reload
 </code></pre>
@@ -409,7 +418,7 @@ host all all ::1/128         trust
 <pre><code>sudo gedit /etc/apt/sources.list
 </code></pre>
 
-<p>Remova a seguinte linha que adicionamos no passo de instalação do PostgreSQL:</p>
+<p>Remova a seguinte linha que adicionamos no passo de instalação do <b>PostgreSQL</b>:</p>
 
 <pre><code>deb http://br.archive.ubuntu.com/ubuntu hardy main universe
 </code></pre>
@@ -460,12 +469,12 @@ Feito isso, acesse a pasta <i>/tmp</i>:</p>
 <pre><code>cd e-cidade-2.2.28-linux.completo/sql/  
 </code></pre>
 
-<p>Crie o usuário dbportal do postgres:</p>
+<p>Crie o usuário <b>dbportal</b> do postgres:</p>
 
 <pre><code>psql -U postgres -hlocalhost template1 -c "create role dbportal with superuser login password 'dbportal'"
 </code></pre>
 
-<p>Crie o usuário dbseller do postgres: </p>
+<p>Crie o usuário <b>dbseller</b> do postgres: </p>
 
 <pre><code>psql -U postgres -h localhost template1 -c "create role dbseller with login password 'dbseller'"
 </code></pre>
@@ -486,16 +495,13 @@ Feito isso, acesse a pasta <i>/tmp</i>:</p>
 <p>Acesse o pacote e copie os arquivos do e-cidade para a pasta do <b>Apache2</b>:</p>
 
 <pre><code>cd /tmp/e-cidade-2.2.28-linux.completo
-
 sudo cp -r e-cidade /var/www
 </code></pre>
 
 <p>Ajuste as permissões da pasta <i>/var/www/e-cidade</i>:</p>
 
 <pre><code>sudo chown -R usuario1.www-data /var/www/e-cidade
-
 sudo chmod -R 775 /var/www/e-cidade
-
 sudo chmod -R 777 /var/www/e-cidade/tmp
 </code></pre>
 
@@ -533,7 +539,7 @@ $DB_BASE = “e-cidade”;
 
 <p>Na tela de login do e-cidade informar o usuário <b>“dbseller”</b> e deixar a senha em branco.</p>
 
-<p><code>**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas &lt;i&gt;“pop-up”&lt;/i&gt; desbloqueadas para o IP do Servidor.**</code></p>
+<p><strong>ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas <i>“pop-up”</i> desbloqueadas para o IP do Servidor.</strong></p>
 
 <p>Compatibilidade das versões do Firefox:</p>
 
@@ -556,16 +562,16 @@ $DB_BASE = “e-cidade”;
 
 <p>Deverá ficar da seguinte maneira:</p>
 
-<pre><code>    &lt;browsers&gt;
-   &lt;browser name='firefox' versao='1.5.*'&gt;&lt;/browser&gt;
-       &lt;browser name='firefox' versao='2.0.*'&gt;&lt;/browser&gt;
-   &lt;browser name='firefox' versao='3.0.*'&gt;&lt;/browser&gt;
-   &lt;browser name='firefox' versao='3.1.*'&gt;&lt;/browser&gt;
-   &lt;browser name='firefox' versao='3.5.*'&gt;&lt;/browser&gt;
-   &lt;browser name='firefox' versao='3.6.*'&gt;&lt;/browser&gt;
-   &lt;browser name='msie' versao='6.0.*'&gt;&lt;/browser&gt;
-       &lt;browser name='msie' versao='7.0.*'&gt;&lt;/browser&gt;
-       &lt;browser name='msie' versao='8.0.*'&gt;&lt;/browser&gt;
+<pre><code>&lt;browsers&gt;
+  &lt;browser name='firefox' versao='1.5.*'&gt;&lt;/browser&gt;
+  &lt;browser name='firefox' versao='2.0.*'&gt;&lt;/browser&gt;
+  &lt;browser name='firefox' versao='3.0.*'&gt;&lt;/browser&gt;
+  &lt;browser name='firefox' versao='3.1.*'&gt;&lt;/browser&gt;
+  &lt;browser name='firefox' versao='3.5.*'&gt;&lt;/browser&gt;
+  &lt;browser name='firefox' versao='3.6.*'&gt;&lt;/browser&gt;
+  &lt;browser name='msie' versao='6.0.*'&gt;&lt;/browser&gt;
+  &lt;browser name='msie' versao='7.0.*'&gt;&lt;/browser&gt;
+  &lt;browser name='msie' versao='8.0.*'&gt;&lt;/browser&gt;
 &lt;/browsers&gt;
 </code></pre>
 
@@ -591,7 +597,7 @@ $DB_BASE = “e-cidade”;
 
 <p>Ajuste as permissões da pasta:</p>
 
-<pre><code>sudo chown -R usuario1.www-data /var/www/e-cidadeonline`
+<pre><code>sudo chown -R usuario1.www-data /var/www/e-cidadeonline
 sudo chmod -R 775 /var/www/e-cidadeonline
 sudo chmod -R 777 /var/www/e-cidadeonline/tmp
 </code></pre>
