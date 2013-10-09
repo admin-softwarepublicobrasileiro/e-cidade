@@ -422,7 +422,7 @@ Caso você tenha instalado o servidor sem ambiente gráfico, então a partir de 
 
 Na tela de login do e-cidade informar o usuário <b>“dbseller”</b> e deixar a senha em branco.
 
-`**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas <i>“pop-up”</i> desbloqueadas para o IP do Servidor.**`
+**ATENÇÃO! Para correto funcionamento do e-cidade, o Firefox deve estar com as janelas <i>“pop-up”</i> desbloqueadas para o IP do Servidor.**
 
 Compatibilidade das versões do Firefox:
 
@@ -443,7 +443,7 @@ Onde está assim:
 
 Deverá ficar da seguinte maneira:
 
-       	<browsers>
+        <browsers>
 	   <browser name='firefox' versao='1.5.*'></browser>
        	   <browser name='firefox' versao='2.0.*'></browser>
 	   <browser name='firefox' versao='3.0.*'></browser>
