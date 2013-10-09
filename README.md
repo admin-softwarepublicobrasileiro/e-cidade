@@ -80,8 +80,8 @@ Além disso, adicione as seguintes linhas ao final desse arquivo:
 
  * Linhas adicionadas para o e-cidade
 
-	LimitRequestLine 16382
-	LimitRequestFieldSize 16382
+		LimitRequestLine 16382
+		LimitRequestFieldSize 16382
 
 Agora, altere o arquivo <i>/etc/apache2/conf.d/charset</i>. Usando o gedit faça assim:
 
