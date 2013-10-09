@@ -27,6 +27,7 @@ Direitos que outras pessoas podem ter sobre a obra ou sobre a utilização da ob
 ## 2 - Introdução ao Sistema e-cidade
 
 O e-cidade destina-se a informatizar a gestão dos Municípios Brasileiros de forma integrada. Essa informatização contempla a integração entre os entes municipais: Prefeitura Municipal, Câmara Municipal, Autarquias, Fundações e outros.
+
 A economia de recursos é somente uma das vantagens na adoção do e-cidade. Há liberdade de escolha dos fornecedores e garantia de continuidade do sistema, uma vez que é apoiado pelo Ministério do Planejamento. 
 
 ## 2.1 - Características 
@@ -35,15 +36,14 @@ O código fonte está disponível para ser baixado livremente no Portal do Softw
 O sistema possui a seguinte plataforma tecnológica:
 
 LINUX
-
-	APACHE – PHP
-	POSTGRESQL – PSQL
-	FPDF
-	AGATA – API
-	FIREFOX
-	HTML / CSS / JAVASCRIPT
-	JAVA TOMCAT
-	ECLIPSE
+APACHE – PHP
+POSTGRESQL – PSQL
+FPDF
+AGATA – API
+FIREFOX
+HTML / CSS / JAVASCRIPT
+JAVA TOMCAT
+ECLIPSE
 
 ![](https://raw.github.com/admin-softwarepublicobrasileiro/e-cidade/master/imagens/5.png) &nbsp;
 
@@ -53,8 +53,11 @@ LINUX
 ## 3.1 - Informações gerais para instalação
 
 É recomendado que este guia seja executado por um usuário com experiência em instalação de pacotes no Linux e configuração básica de Apache, PHP e PostgreSQL. 
+
 Este roteiro está baseado no Sistema Operacional GNU/Linux Ubuntu 10.04 LTS. Cabe lembrar que em outras distribuições Linux o processo de instalação pode variar.
+
 Este manual pressupõe que o servidor de aplicação Web e o banco de dados estarão instalados no mesmo servidor. 
+
 Neste guia, sempre que necessário editar algum arquivo, será usado o editor de texto GEDIT. Mas cabe lembrar que é apenas uma opção, existem outros editores como o VIM.
   
 ## 4 - Passo-a-passo da Instalação
@@ -75,7 +78,7 @@ Altere o valor do parâmetro <b>Timeout</b>:
 	
 Além disso, adicione as seguintes linhas ao final desse arquivo:
 
- *Linhas adicionadas para o e-cidade
+ * Linhas adicionadas para o e-cidade
 
 	LimitRequestLine 16382
 	LimitRequestFieldSize 16382
@@ -135,7 +138,7 @@ Modifique os seguintes parâmetros:
 	error_reporting = E_ALL & ~E_NOTICE
 	display_errors = Off
 	log_errors = On
-	error_log = /var/www/log/php-scripts.log(retirar o ponto e vírgula da frente da linha)
+	error_log = /var/www/log/php-scripts.log       (retirar o ponto e vírgula da frente da linha)
 	session.gc_maxlifetime = 7200
 
 Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o caractere '#', remova este.
@@ -143,6 +146,7 @@ Caso a linha desses parâmetros estejam comentadas, ou seja, iniciando com o car
 ## 4.3 - Instalando o PostgreSQL 8.2
 
 Este será o banco de dados usado para armazenar as informações que serão usadas pelo software e-cidade. Para esta instalação será necessário baixar o <b>PostgreSQL versão 8.2</b>.
+
 Para conseguir baixar essa versão, edite o arquivo <i>/etc/apt/sources.list</i>:
 
 	sudo gedit /etc/apt/sources.list
@@ -158,7 +162,11 @@ Agora, para instalar o <b>PostgreSQL 8.2</b> deve-se executar os seguintes coman
   
 **Configurando o Cluster.**
 
-Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB). Nessa instalação será usado o cluster do <b>PostgreSQL 8.2</b> onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1). Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
+Cluster é o conjunto de banco de dados gerenciados por uma única instância (conjunto de datafiles, arquivos de controle e processos no servidor que formam um SGDB).
+
+Nessa instalação será usado o cluster do <b>PostgreSQL 8.2</b> onde será instalado o e-cidade e encoding LATIN1(ISO-8859-1).
+
+Edite o arquivo <i>/etc/postgresql/8.2/main/pg_hba.conf</i>:
 
 	sudo gedit /etc/postgresql/8.2/main/pg_hba.conf
 
